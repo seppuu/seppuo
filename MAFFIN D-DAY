@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:900|Montserrat:900">
+<link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+
+<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@700&display=swap" rel="stylesheet">
+<title>Document</title>
+<style>
+
+
+body{
+background-color: white;
+}
+
+#timer {
+color: #CB912F;
+text-align: center;
+text-transform: uppercase;
+font-family: 'Lato', sans-serif;
+
+font-size: .6em;
+letter-spacing: 5px;
+}
+
+
+.days {
+display: inline-block;
+
+padding: 20px;
+width: 150px;
+border-radius: 3px;
+}
+
+
+.days {
+background: linear-gradient(45deg, #313940, #273440);
+}
+
+.numbers {
+font-family: 'Dosis', sans-serif;
+color: #9E968A;
+font-size: 4em;
+font-weight:bold;
+}
+
+}
+
+
+
+</style>
+</head>
+<body>
+
+<div id="timer">
+
+<div class="days"> 
+<div id="days" class="numbers"> </div>MAFFIN</div> 
+</div>
+
+</div>
+
+
+</body>
+<script>
+const year = new Date().getFullYear();
+
+const myDate = new Date('July 1, 2022 00:00:00');
+console.log(myDate);
+
+// countdown
+let timer = setInterval(function() {
+
+// get today's date
+const today = new Date().getTime();
+
+// get the difference
+const diff = myDate - today;
+
+// math
+let days = Math.floor(-diff / (1000 * 60 * 60 * 24));
+
+// display
+document.getElementById("days").innerHTML=days+1
+
+
+}, 1);
+</script>
+</html>
